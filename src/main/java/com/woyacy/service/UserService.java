@@ -4,5 +4,5 @@ import com.woyacy.bean.UserBean;
 
 public interface UserService {
 
-    public Boolean findUserByNameAndPwd(UserBean userBean);
+    public int findUserByNameAndPwd(UserBean userBean);
 }

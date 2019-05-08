@@ -1,17 +1,24 @@
 package com.woyacy.controller;
 
-import org.springframework.stereotype.Controller;
+import com.woyacy.bean.UserBean;
+import com.woyacy.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping("/public")
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
+    @Autowired
+    private UserService userService;
 
-    @RequestMapping("/login")
-    public String Login(){
-      System.out.println("6666");
-        return "tetsss";
+    @RequestMapping("login")
+    public int login(String name,String pwd){
+        UserBean userBean = new UserBean();
+        userBean.setName(name);
+        userBean.setPwd(pwd);
+        int userByNameAndPwd = userService.findUserByNameAndPwd(userBean);
+        return userByNameAndPwd>0?1:0;
     }
-
 }

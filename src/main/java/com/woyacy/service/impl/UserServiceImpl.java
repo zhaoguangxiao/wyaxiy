@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public Boolean findUserByNameAndPwd(UserBean userBean) {
-        return userMapper.selectUserByNameAndPwd(userBean) > 0 ?true :false;
+    public int findUserByNameAndPwd(UserBean userBean) {
+        return userMapper.selectUserByNameAndPwd(userBean);
     }
 }
