@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.woyacy.dao.UserMapper" >
+
+
+    <resultMap id="BaseResultMap" type="com.woyacy.bean.UserBean" >
+        <id column="uid" property="uid" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    </resultMap>
+
+   <sql id="BaseUser">uid,name,pwd</sql>
+
+    <select id="selectUserByNameAndPwd"  parameterType="com.woyacy.bean.UserBean" resultType="int">
+        select count(uid) from tb_user
+      where name=#{name,jdbcType=VARCHAR} and pwd=#{pwd,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

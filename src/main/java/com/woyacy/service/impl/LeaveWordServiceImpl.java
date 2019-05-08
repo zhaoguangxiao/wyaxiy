@@ -1,6 +1,9 @@
 package com.woyacy.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.woyacy.bean.LeaveWordBean;
+import com.woyacy.bean.PageBean;
 import com.woyacy.dao.LeaveWordMapper;
 import com.woyacy.service.LeaveWordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +42,15 @@ public class LeaveWordServiceImpl implements LeaveWordService {
     @Override
     public LeaveWordBean selectLeaveWordByKey(Long id) {
         return leaveWordMapper.selectByKey(id);
+    }
+
+    @Override
+    public PageBean finPage(int pageNum, int pageSize) {
+        // pageNum 当前第几页
+        // pageSize 每页几条数据
+        PageHelper.startPage(pageNum, pageSize);
+        // 转换page类型
+        Page<LeaveWordBean> page = (Page<LeaveWordBean>) leaveWordMapper.selectAllLeaveWord();
+        return new PageBean(page.getTotal(), page.getResult());
     }
 }

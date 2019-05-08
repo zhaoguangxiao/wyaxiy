@@ -1,6 +1,7 @@
 package com.woyacy.service;
 
 import com.woyacy.bean.LeaveWordBean;
+import com.woyacy.bean.PageBean;
 
 public interface LeaveWordService {
     /**
@@ -22,5 +23,16 @@ public interface LeaveWordService {
     public void updateLeaveWordByStatus(LeaveWordBean leaveWordBean);
 
 
+    /**
+     * 根据id查询留言
+     * @param id
+     * @return
+     */
     public LeaveWordBean selectLeaveWordByKey(Long id);
+
+
+    /**
+     * 	分页查询数据
+     */
+    public PageBean finPage(int pageNum, int pageSize);
 }

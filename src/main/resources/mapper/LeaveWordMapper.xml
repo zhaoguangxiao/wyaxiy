@@ -76,4 +76,10 @@
         select <include refid="BaseUser"></include> from tb_leave where id = #{id,jdbcType=BIGINT}
     </select>
 
+
+    <select id="selectAllLeaveWord" resultMap="BaseResultMap">
+        select <include refid="BaseUser"></include> from tb_leave
+        order by createtime desc
+    </select>
+
 </mapper>

@@ -1,8 +1,9 @@
 package com.woyacy.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LeaveWordBean {
+public class LeaveWordBean implements Serializable {
 
 
     public static final int READ_STATUS=1;

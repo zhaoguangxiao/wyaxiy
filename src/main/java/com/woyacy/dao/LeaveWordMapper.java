@@ -2,6 +2,8 @@ package com.woyacy.dao;
 
 import com.woyacy.bean.LeaveWordBean;
 
+import java.util.List;
+
 public interface LeaveWordMapper {
 
     public void insertLeaveWord(LeaveWordBean leaveWordBean);
@@ -15,6 +17,8 @@ public interface LeaveWordMapper {
 
     public LeaveWordBean selectByKey(Long id);
 
+
+    public List<LeaveWordBean> selectAllLeaveWord();
 
 
 
