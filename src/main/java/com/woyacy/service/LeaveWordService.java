@@ -3,6 +3,8 @@ package com.woyacy.service;
 import com.woyacy.bean.LeaveWordBean;
 import com.woyacy.bean.PageBean;
 
+import java.util.List;
+
 public interface LeaveWordService {
     /**
      * 添加留言方法
@@ -35,4 +37,7 @@ public interface LeaveWordService {
      * 	分页查询数据
      */
     public PageBean finPage(int pageNum, int pageSize);
+
+
+    public List<LeaveWordBean> selectAllLeaveWord();
 }

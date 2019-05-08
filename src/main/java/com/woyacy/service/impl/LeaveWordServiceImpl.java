@@ -53,4 +53,9 @@ public class LeaveWordServiceImpl implements LeaveWordService {
         Page<LeaveWordBean> page = (Page<LeaveWordBean>) leaveWordMapper.selectAllLeaveWord();
         return new PageBean(page.getTotal(), page.getResult());
     }
+
+    @Override
+    public List<LeaveWordBean> selectAllLeaveWord() {
+        return leaveWordMapper.selectAllLeaveWord();
+    }
 }

@@ -27,7 +27,7 @@ public class UserServiceTestCase {
     public void findUserByNamePwd(){
         UserBean bean = new UserBean();
         bean.setName("admin");
-        bean.setPwd("weijie++");
+        bean.setPwd("123456");
         userService.findUserByNameAndPwd(bean);
     }
 
