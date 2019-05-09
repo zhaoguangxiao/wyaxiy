@@ -9,6 +9,10 @@ public class LeaveWordBean implements Serializable {
     public static final int READ_STATUS=1;
     public static final int UNREAD_STATUS=0; //0为未读
 
+    //商家分类
+    public static final int ZHOU_YUAN_WAI=1;
+
+
 
     private Long id;
     private String uname;

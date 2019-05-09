@@ -3,13 +3,20 @@ package com.woyacy.controller;
 import com.woyacy.bean.LeaveWordBean;
 import com.woyacy.bean.PageBean;
 import com.woyacy.service.LeaveWordService;
+import com.woyacy.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import static com.woyacy.bean.LeaveWordBean.ZHOU_YUAN_WAI;
 
 /**
  * 后台ajax请求地址
@@ -88,9 +95,26 @@ public class MemberController {
     /**
      * 根据搜索条件导出Excel
      */
-    @RequestMapping("/export")
-    public void export() {
-
+    @RequestMapping(value = "/export",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String export(String name, String tell, String beginTime,String endTime) throws Exception {
+        //查询数据
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("uname",name);
+        hashMap.put("phone",tell);
+        hashMap.put("beginDate",beginTime);
+        hashMap.put("endDate",endTime);
+        List<LeaveWordBean> leaveWordByCondition = leaveWordService.findLeaveWordByCondition(hashMap);
+        String[][] strings = changeList(leaveWordByCondition);
+        //设置单元格的宽度
+        int[] columnWidth = {15, 15, 30, 30,30, 30,30, 30,30};
+        //设置excel文件的明后才能
+        String[] columnName ={"id","名字","手机号","区域","状态","url","创建时间","ip","所属商家"};
+        try {
+            String exportXLS = ExcelUtil.ExportExcel(9, columnWidth, "留言导出文件", columnName, strings);
+          return exportXLS;
+        }catch (Exception e){
+           return null;
+        }
     }
 
     /**
@@ -98,7 +122,7 @@ public class MemberController {
      * @return
      */
     @RequestMapping("/precis")
-    public List<LeaveWordBean> precisSearch(String name, String tell, Date beginTime,Date endTime){
+    public List<LeaveWordBean> precisSearch(String name, String tell, String beginTime,String endTime){
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("uname",name);
         hashMap.put("phone",tell);
@@ -107,5 +131,36 @@ public class MemberController {
         return leaveWordService.findLeaveWordByCondition(hashMap);
     }
 
+
+    /**
+     * 把对象转化为二维数组
+     * @param beanLists
+     * @return
+     */
+    private String[][] changeList(List<LeaveWordBean> beanLists){
+        //把集合数据转化为二维数组
+        String [][] strs =new String[beanLists.size()][9];
+        for (int i = 0; i < beanLists.size(); i++) {
+            LeaveWordBean leaveWordBean = beanLists.get(i);
+            strs[i][0]= String.valueOf(leaveWordBean.getId());
+            strs[i][1]=leaveWordBean.getUname();
+            strs[i][2]=leaveWordBean.getPhone();
+            strs[i][3]=leaveWordBean.getDistrict();
+            strs[i][4]= String.valueOf(leaveWordBean.getStatus());
+            strs[i][5]=leaveWordBean.getUrl();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            strs[i][6]= dateFormat.format(leaveWordBean.getCreateTime());
+            strs[i][7]=leaveWordBean.getIp();
+            if (leaveWordBean.getCategory()==ZHOU_YUAN_WAI){
+                strs[i][8]= String.valueOf("粥员外");
+            }
+
+        }
+        for (int i = 0; i < strs.length; i++) {
+            for (int j = 0; j < strs[i].length; j++) {
+            }
+        }
+        return strs;
+    }
 
 }
