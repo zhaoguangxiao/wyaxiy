@@ -3,6 +3,7 @@ package com.woyacy.dao;
 import com.woyacy.bean.LeaveWordBean;
 
 import java.util.List;
+import java.util.Map;
 
 public interface LeaveWordMapper {
 
@@ -21,5 +22,6 @@ public interface LeaveWordMapper {
     public List<LeaveWordBean> selectAllLeaveWord();
 
 
+    public List<LeaveWordBean> findLeaveWordByCondition(Map<String,Object> map);
 
 }

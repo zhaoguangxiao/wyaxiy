@@ -4,6 +4,7 @@ import com.woyacy.bean.LeaveWordBean;
 import com.woyacy.bean.PageBean;
 
 import java.util.List;
+import java.util.Map;
 
 public interface LeaveWordService {
     /**
@@ -20,9 +21,9 @@ public interface LeaveWordService {
 
     /**
      * 更新已读/未读状态
-     * @param leaveWordBean
+     * @param ids
      */
-    public void updateLeaveWordByStatus(LeaveWordBean leaveWordBean);
+    public void updateLeaveWordByStatus(Long [] ids);
 
 
     /**
@@ -39,5 +40,16 @@ public interface LeaveWordService {
     public PageBean finPage(int pageNum, int pageSize);
 
 
+    /**
+     * 查询全部留言数据
+     * @return
+     */
     public List<LeaveWordBean> selectAllLeaveWord();
+
+
+    public List<LeaveWordBean> findLeaveWordByCondition(Map<String,Object> map);
+
+    public void deleteLeaveWordById(Long id);
+
+
 }

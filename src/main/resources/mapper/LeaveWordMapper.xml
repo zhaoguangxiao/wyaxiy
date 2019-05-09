@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.woyacy.dao.LeaveWordMapper" >
+<mapper namespace="com.woyacy.dao.LeaveWordMapper">
 
 
-    <resultMap id="BaseResultMap" type="com.woyacy.bean.LeaveWordBean" >
-        <id column="ID" property="id" jdbcType="BIGINT" />
-        <result column="uname" property="uname" jdbcType="VARCHAR" />
-        <result column="phone" property="phone" jdbcType="VARCHAR" />
-        <result column="district" property="district" jdbcType="VARCHAR" />
-        <result column="status" property="status" jdbcType="BIGINT" />
-        <result column="url" property="url" jdbcType="VARCHAR" />
-        <result column="createtime" property="createTime" jdbcType="TIMESTAMP" />
-        <result column="ip" property="ip" jdbcType="VARCHAR" />
-        <result column="shoptype" property="category" jdbcType="BIGINT" />
+    <resultMap id="BaseResultMap" type="com.woyacy.bean.LeaveWordBean">
+        <id column="ID" property="id" jdbcType="BIGINT"/>
+        <result column="uname" property="uname" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="district" property="district" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="BIGINT"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="createtime" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="ip" property="ip" jdbcType="VARCHAR"/>
+        <result column="shoptype" property="category" jdbcType="BIGINT"/>
     </resultMap>
 
 
-   <sql id="BaseUser">ID,uname,phone,district,status,url,createtime,ip,shoptype</sql>
+    <sql id="BaseUser">ID,uname,phone,district,status,url,createtime,ip,shoptype</sql>
 
 
     <insert id="insertLeaveWord" parameterType="com.woyacy.bean.LeaveWordBean">
@@ -42,29 +42,29 @@
 
     <update id="updateLeaveWordByld" parameterType="com.woyacy.bean.LeaveWordBean">
         update tb_leave
-        <set >
-            <if test="uname != null" >
+        <set>
+            <if test="uname != null">
                 uname =#{uname,jdbcType=VARCHAR},
             </if>
-            <if test="phone != null" >
+            <if test="phone != null">
                 phone = #{phone,jdbcType=VARCHAR},
             </if>
-            <if test="district != null" >
+            <if test="district != null">
                 district = #{district,jdbcType=VARCHAR},
             </if>
-            <if test="status != null" >
+            <if test="status != null">
                 status = #{status,jdbcType=BIGINT},
             </if>
-            <if test="url != null" >
+            <if test="url != null">
                 url =#{url,jdbcType=VARCHAR},
             </if>
-            <if test="createTime != null" >
+            <if test="createTime != null">
                 createtime = #{createTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="ip != null" >
+            <if test="ip != null">
                 ip = #{ip,jdbcType=VARCHAR},
             </if>
-            <if test="category != null" >
+            <if test="category != null">
                 shoptype = #{category,jdbcType=BIGINT},
             </if>
         </set>
@@ -80,6 +80,28 @@
     <select id="selectAllLeaveWord" resultMap="BaseResultMap">
         select <include refid="BaseUser"></include> from tb_leave
         order by createtime desc
+    </select>
+
+
+    <select id="findLeaveWordByCondition" parameterType="map" resultMap="BaseResultMap">
+        select <include refid="BaseUser"></include> from tb_leave
+        <where>
+            <if test="uname != null">
+                <bind name="unameLike" value="'%'+uname.trim()+'%'"/>
+                and uname like #{unameLike,jdbcType=VARCHAR}
+            </if>
+
+            <if test="phone != null">
+                <bind name="phoneLike" value="'%'+phone.trim()+'%'"/>
+                and phone like #{phoneLike,jdbcType=VARCHAR}
+            </if>
+
+            <if test="beginDate != null and beginDate != ''">AND createtime <![CDATA[>=]]> #{beginDate}</if>
+            <if test="endDate != null and endDate != ''">AND createtime <![CDATA[<=]]>#{endDate}</if>
+
+
+        </where>
+
     </select>
 
 </mapper>
