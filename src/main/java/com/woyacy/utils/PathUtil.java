@@ -39,7 +39,8 @@ public class PathUtil {
      */
     public static String getUploadPath()
     {
-        return getWebInfPath()+File.separatorChar+"upload";
+        //getWebInfPath()+File.separatorChar+"upload";
+        return "D:";
     }
 
 

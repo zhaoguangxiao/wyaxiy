@@ -3,12 +3,12 @@ package com.woyacy.controller;
 import com.woyacy.bean.LeaveWordBean;
 import com.woyacy.service.LeaveWordService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.Date;
+
+@RestController
 @RequestMapping("/leave")
 public class LeaveWordController {
 
@@ -18,19 +18,22 @@ public class LeaveWordController {
 
 
     @RequestMapping("/insert")
-    public int saveLeaveWord(@RequestBody LeaveWordBean leaveWordBean){
+    public boolean saveLeaveWord(String name,String url,String tell,int category,String ip,String description){
         try {
-            leaveWordService.addLeaveWord(leaveWordBean);
-            return 1;
+            LeaveWordBean wordBean = new LeaveWordBean();
+            wordBean.setUname(name);
+            wordBean.setUrl(url);
+            wordBean.setPhone(tell);
+            wordBean.setCreateTime(new Date());
+            wordBean.setCategory(category);
+            wordBean.setIp(ip);
+            wordBean.setStatus(LeaveWordBean.UNREAD_STATUS); //默认未读状态
+            wordBean.setDistrict(description);
+            leaveWordService.addLeaveWord(wordBean);
+            return true;
         }catch (Exception e){
-            return 0;
+            return false;
         }
-    }
-
-    @RequestMapping("/search")
-    @ResponseBody
-    public String hello(){
-        return "66666";
     }
 
 }

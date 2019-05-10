@@ -3,8 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 </head>
 <body>
-66666
+<!-- 头部 -->
+<header>
+    <a href="javascript:void(0);">
+        <img src="./img/banner01.jpg" alt="">
+    </a>
+</header>
+
+<!-- 导航 -->
+<nav>
+    <ul>
+        <li>
+            <a href="javascript:void(0);">
+                <img src="./img/nav01.png" alt="">
+                <p>美味海鲜粥</p>
+                <p>SEAFOOD</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">
+                <img src="./img/nav02.png" alt="">
+                <p>红豆薏米粥</p>
+                <p>ADZUKIBEAN</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">
+                <img src="./img/nav03.png" alt="">
+                <p>菠菜牛肉粥</p>
+                <p>SPINACHBEEF</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">
+                <img src="./img/nav04.png" alt="">
+                <p>山药红枣粥</p>
+                <p>CHINESEYAMJUJUBE</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- 主体 -->
+<main>
+    <a href="javascript:void(0);">
+        <img src="./img/main01.png" alt="">
+    </a>
+</main>
+
+<!-- 底部 -->
+<!--<footer>-->
+<!--<a href="javascript:void(0);" class="fl">-->
+<!--<img src="./img/footer01.jpg" alt="">-->
+<!--</a>-->
+
+<!--<div>-->
+<!--<p>总裁一对一沟通</p>-->
+<!--<form action="">-->
+
+<!--<input type="text" placeholder="请输入姓名">-->
+
+<!--<input type="text" placeholder="请输入联系方式">-->
+
+<!--<input type="text" placeholder="请输入所在地区">-->
+
+<!--<button>点击进行对话</button>-->
+<!--</form>-->
+<!--</div>-->
+
+<!--<a href="javascript:void(0);" class="fr">-->
+<!--<img src="./img/footer02.jpg" alt="">-->
+<!--</a>-->
+<!---->
+<!--</footer>-->
+
+
+<footer>
+    <div>
+        <a href="javascript:void(0);">
+            <img src="./img/footer01.jpg" alt="">
+        </a>
+    </div>
+    <div>
+
+        <p>总裁一对一沟通</p>
+        <form action="" class="layui-form">
+
+            <input type="text" placeholder="请输入姓名" class="layui-input" name="username" lay-verify="required|username">
+
+            <input type="text" placeholder="请输入联系方式" class="layui-input" name="phone" lay-verify="required|phone">
+
+            <input type="text" placeholder="请输入所在地区" class="layui-input" name="address" lay-verify="address">
+
+            <button lay-submit lay-filter="go">点击进行对话</button>
+
+        </form>
+
+
+    </div>
+    <div>
+        <a href="javascript:void(0);">
+            <img src="./img/footer02.jpg" alt="">
+        </a>
+    </div>
+</footer>
+
+
+<script src="./lib/layui/layui.js"></script>
+<script src="./js/index.js"></script>
 </body>
 </html>
