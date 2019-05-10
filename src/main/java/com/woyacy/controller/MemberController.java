@@ -9,12 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.woyacy.bean.LeaveWordBean.ZHOU_YUAN_WAI;
 
@@ -89,6 +87,19 @@ public class MemberController {
         } catch (Exception e) {
             return false;
         }
+    }
+
+
+    @RequestMapping("/updateById")
+    public boolean updateLeaveWordById(Long id){
+        try {
+            Long [] longs =new Long[]{id};
+            leaveWordService.updateLeaveWordByStatus(longs);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+
     }
 
 

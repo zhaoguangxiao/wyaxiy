@@ -41,15 +41,19 @@ public class LeaveWordServiceImpl implements LeaveWordService {
         List<Long> longs = Arrays.asList(ids);
         if (CollectionUtils.isNotEmpty(longs)){
             longs.forEach(id->{
-                LeaveWordBean leaveWordBean = new LeaveWordBean();
-                leaveWordBean.setId(id);
-                //更改状态为已读
-                leaveWordBean.setStatus(LeaveWordBean.READ_STATUS);
+                LeaveWordBean leaveWordBean = setLeaveWordBean(id);
                 //更新状态
                 leaveWordMapper.updateLeaveWordByld(leaveWordBean);
             });
         }
+    }
 
+    private LeaveWordBean setLeaveWordBean(Long id){
+        LeaveWordBean leaveWordBean = new LeaveWordBean();
+        leaveWordBean.setId(id);
+        //更改状态为已读
+        leaveWordBean.setStatus(LeaveWordBean.READ_STATUS);
+        return leaveWordBean;
     }
 
     @Override
