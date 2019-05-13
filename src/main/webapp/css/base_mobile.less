@@ -1,0 +1,132 @@
+#mobile{
+    /*公共样式*/
+
+    /*1.样式重置*/
+    html, body, ul, li, img, a, p, div, form, input, dl, dd, dt, span {
+        padding: 0;
+        margin: 0;
+        /*设置盒模型*/
+        box-sizing: border-box;
+        /*去除移动端特有的点击高亮效果*/
+        -webkit-tap-highlight-color: transparent;
+        touch-action: none;
+    }
+
+    body {
+        font-family: "微软雅黑", sans-serif;
+        font-size: 13px;
+        height: 100%;
+    }
+
+    a,
+    a:hover {
+        color: #666;
+        text-decoration: none;
+    }
+
+    ul, dl, dd, dt {
+        list-style: none;
+    }
+
+    input {
+        /*1.清除文本框获取焦点时默认的边框阴影*/
+        outline: none;
+        /*2.去除边框*/
+        border: none;
+        /*3.添加边框*/
+        border: 1px solid #ccc;
+    }
+
+    /*2.添加新的样式*/
+    .f_left {
+        float: left;
+    }
+
+    .f_right {
+        float: right;
+    }
+
+    .m_left10 {
+        margin-left: 10px;
+    }
+
+    .m_right10 {
+        margin-right: 10px;
+    }
+
+    .m_top10 {
+        margin-top: 10px;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+        content: "";
+        display: block;
+        height: 0;
+        line-height: 0px;
+        clear: both;
+        visibility: hidden;
+    }
+
+    /* 阿里字体图标 */
+    @font-face {
+        font-family: 'iconfont';  /* project id 1119145 */
+        src: url('//at.alicdn.com/t/font_1119145_vpupjymfhd.eot');
+        src: url('//at.alicdn.com/t/font_1119145_vpupjymfhd.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_1119145_vpupjymfhd.woff2') format('woff2'),
+        url('//at.alicdn.com/t/font_1119145_vpupjymfhd.woff') format('woff'),
+        url('//at.alicdn.com/t/font_1119145_vpupjymfhd.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_1119145_vpupjymfhd.svg#iconfont') format('svg');
+    }
+
+    .iconfont {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .layout {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        max-width: 6.4rem;
+        min-width: 3.2rem;
+        /*position: relative;*/
+        border-top: 1px solid transparent;
+    }
+
+    .container {
+        padding-left: 0.15rem;
+        padding-right: 0.15rem;
+    }
+
+    a::after {
+        /*display: none!important;*/
+    }
+
+    @font-face {
+        font-family: SourceHanSerifCN;
+        src: url("../fonts/SourceHanSerifCN.ttf");
+    }
+
+    @font-face {
+        font-family: PingFangSC-Bold;
+        src: url("../fonts/PingFangSC-Bold.ttf");
+    }
+
+    html, body {
+        font-family: "SourceHanSerifCN", serif!important;
+        /*font-weight: bold;*/
+    }
+
+    .layout {
+        max-width: 640px;
+    }
+    .w{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}

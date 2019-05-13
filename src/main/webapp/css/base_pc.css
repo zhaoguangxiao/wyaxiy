@@ -1,0 +1,254 @@
+@charset "utf-8";
+#pc {
+  /*
+      @名称: base
+      @功能: 重设浏览器默认样式
+  */
+  /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+  /* 内外边距通常让各个浏览器样式的表现位置不同 */
+  /* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+  /* HTML5 媒体文件跟 img 保持一致 */
+  /* 要注意表单元素并不继承父级 font 的问题 */
+  /* 去掉各Table  cell 的边距并让其边重合 */
+  /* IE bug fixed: th 不继承 text-align*/
+  /* 去除默认边框 */
+  /* ie6 7 8(q) bug 显示为行内表现 */
+  /* 去掉 firefox 下此元素的边框 */
+  /* 一致的 del 样式 */
+  /* 去掉列表前的标识, li 会继承 */
+  /* 对齐是排版最重要的因素, 别让什么都居中 */
+  /* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+  /* 统一上标和下标 */
+  /* 让链接在 hover 状态下显示下划线 */
+  /* 默认不显示下划线，保持页面简洁 */
+  /* a的默认字体颜色 */
+  /* 清理浮动 */
+  /* 隐藏, 通常用来与 JS 配合 */
+  /* 设置内联, 减少浮动带来的bug */
+  /* 阿里矢量图标 */
+  /*@font-face {*/
+  /*font-family: 'iconfont';*/
+  /*src: url('/lib/iconfont/iconfont.eot');*/
+  /*src: url('/lib/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),*/
+  /*url('/lib/iconfont/iconfont.woff2') format('woff2'),*/
+  /*url('/lib/iconfont/iconfont.woff') format('woff'),*/
+  /*url('/lib/iconfont/iconfont.ttf') format('truetype'),*/
+  /*url('/lib/iconfont/iconfont.svg#iconfont') format('svg');*/
+  /*}*/
+}
+#pc * {
+  box-sizing: border-box;
+}
+#pc html {
+  color: #000;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  min-width: 1204px;
+}
+#pc body,
+#pc div,
+#pc dl,
+#pc dt,
+#pc dd,
+#pc ul,
+#pc ol,
+#pc li,
+#pc h1,
+#pc h2,
+#pc h3,
+#pc h4,
+#pc h5,
+#pc h6,
+#pc pre,
+#pc code,
+#pc form,
+#pc fieldset,
+#pc legend,
+#pc input,
+#pc textarea,
+#pc p,
+#pc blockquote,
+#pc th,
+#pc td,
+#pc hr,
+#pc button,
+#pc article,
+#pc aside,
+#pc details,
+#pc figcaption,
+#pc figure,
+#pc footer,
+#pc header,
+#pc hgroup,
+#pc menu,
+#pc nav,
+#pc section {
+  margin: 0;
+  padding: 0;
+}
+#pc article,
+#pc aside,
+#pc details,
+#pc figcaption,
+#pc figure,
+#pc footer,
+#pc header,
+#pc hgroup,
+#pc menu,
+#pc nav,
+#pc section {
+  display: block;
+}
+#pc audio,
+#pc canvas,
+#pc video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+#pc body,
+#pc button,
+#pc input,
+#pc select,
+#pc textarea {
+  font: 12px/1.5 tahoma, arial, \5b8b\4f53;
+}
+#pc input,
+#pc select,
+#pc textarea {
+  font-size: 100%;
+}
+#pc table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#pc th {
+  text-align: inherit;
+}
+#pc fieldset,
+#pc img {
+  border: 0;
+}
+#pc iframe {
+  display: block;
+}
+#pc abbr,
+#pc acronym {
+  border: 0;
+  font-variant: normal;
+}
+#pc del {
+  text-decoration: line-through;
+}
+#pc address,
+#pc caption,
+#pc cite,
+#pc code,
+#pc dfn,
+#pc em,
+#pc th,
+#pc var {
+  font-style: normal;
+  font-weight: 500;
+}
+#pc ol,
+#pc ul {
+  list-style: none;
+}
+#pc caption,
+#pc th {
+  text-align: left;
+}
+#pc h1,
+#pc h2,
+#pc h3,
+#pc h4,
+#pc h5,
+#pc h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+#pc q:before,
+#pc q:after {
+  content: '';
+}
+#pc sub,
+#pc sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+#pc sup {
+  top: -0.5em;
+}
+#pc sub {
+  bottom: -0.25em;
+}
+#pc a:hover {
+  text-decoration: none;
+}
+#pc ins,
+#pc a {
+  text-decoration: none;
+}
+#pc a {
+  color: #000;
+  text-decoration: none !important;
+}
+#pc .clearfix::before,
+#pc .clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0px;
+  clear: both;
+  visibility: hidden;
+}
+#pc body .hide {
+  display: none;
+}
+#pc .fl {
+  float: left;
+  display: inline;
+}
+#pc .fr {
+  float: right;
+  display: inline;
+}
+#pc .w {
+  width: 1152px;
+  margin: 0 auto;
+}
+#pc .ww {
+  width: 1204px;
+  margin: 0 auto;
+}
+#pc body {
+  background-color: #f5f5f5;
+}
+@font-face {
+  font-family: SourceHanSerifCN;
+  src: url("../fonts/SourceHanSerifCN.ttf");
+}
+@font-face {
+  font-family: PingFangSC-Bold;
+  src: url("../fonts/PingFangSC-Bold.ttf");
+}
+#pc html,
+#pc body {
+  font-family: SourceHanSerifCN, sans-serif !important;
+}
+
+#pc .iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#pc i {
+  font-style: normal;
+}
+/*# sourceMappingURL=base_pc.css.map */

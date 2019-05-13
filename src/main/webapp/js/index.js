@@ -7,12 +7,10 @@
 //description
 
 
-let nowUrl = window.location.href,
-    // console.log(nowUrl)
-    nowIp = returnCitySN["cip"];
+let nowUrl = window.location.href;
+// console.log(nowUrl)
+let nowIp = returnCitySN["cip"];
 
-
-//一般直接写在一个js文件中
 layui.use(['layer', 'form'], function () {
     var layer = layui.layer
         , form = layui.form;
@@ -20,8 +18,8 @@ layui.use(['layer', 'form'], function () {
     // 表单验证
     form.verify({
         username: [
-            /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/
-            , "请输入正确的姓名"
+            /^[\u4E00-\u9FA5A-Za-z\s]+(·[\u4E00-\u9FA5A-Za-z]+)*$/,
+            "请输入正确的姓名"
         ],
         address: value => {
             if (value.length > 10) {
@@ -32,6 +30,7 @@ layui.use(['layer', 'form'], function () {
 
     // 表单提交
     form.on('submit(go)', data => {
+        // console.log(123)
         var goForm = data.field;
         let {username, phone, address} = goForm
         // console.log(username, phone, address)
@@ -57,7 +56,7 @@ layui.use(['layer', 'form'], function () {
 
         console.log(nowIp)
 
-        axios.get("http://192.168.20.45:8080/leave/insert.do?name=" + username + "&url=" + nowUrl + "&tell=" + phone + "&category=1&ip=" + nowIp + "&description=" + address)
+        axios.post("http://47.103.16.140/leave/insert.do?name=" + username + "&url=" + nowUrl + "&tell=" + phone + "&category=1&ip=" + nowIp + "&description=" + address)
             .then(res => {
                 console.log(res)
                 if (res.data) {

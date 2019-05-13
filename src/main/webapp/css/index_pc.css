@@ -1,0 +1,138 @@
+/*
+
+    pc页面css
+
+
+*/
+#pc {
+  /* 头部 */
+}
+#pc html,
+#pc body {
+  background-color: #fff;
+}
+#pc header a {
+  display: block;
+  width: 100%;
+}
+#pc header a img {
+  display: block;
+  width: 100%;
+}
+#pc nav {
+  padding-top: 60px;
+  padding-bottom: 65px;
+}
+#pc nav ul {
+  width: 1280px;
+  margin: 0 auto;
+}
+#pc nav ul li {
+  display: inline-block;
+}
+#pc nav ul li a img {
+  display: block;
+  width: 100%;
+}
+#pc nav ul li a p {
+  text-align: center;
+  color: #4a4a4a;
+}
+#pc nav ul li a p:nth-of-type(1) {
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 19px;
+  margin-bottom: 11px;
+}
+#pc nav ul li a p:nth-of-type(2) {
+  font-size: 12px;
+  line-height: 12px;
+}
+#pc nav ul li:nth-of-type(-n+3) {
+  margin-right: 100px;
+}
+#pc main {
+  margin-bottom: 104px;
+}
+#pc main a img {
+  display: block;
+  width: 100%;
+}
+#pc footer {
+  display: flex;
+  justify-content: space-between;
+}
+#pc footer div {
+  font-family: PingFangSC-Bold;
+}
+#pc footer div:nth-of-type(1) {
+  flex: 0 0 825.6px;
+}
+#pc footer div:nth-of-type(1) a img {
+  display: block;
+  width: 100%;
+}
+#pc footer div:nth-of-type(2) {
+  flex: 0 0 326.4px;
+  height: 478px;
+  background-color: #e3c483;
+  box-shadow: 5px 3px 13px 1px rgba(213, 175, 94, 0.83);
+  background-size: contain;
+  padding-top: 37px;
+  transform: translateX(-20px);
+  margin: 30px auto 0;
+}
+#pc footer div:nth-of-type(2) p {
+  width: 300px;
+  height: 62px;
+  background-color: rgba(35, 34, 33, 0.71);
+  line-height: 62px;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+#pc footer div:nth-of-type(2) form {
+  width: 300px;
+  border-radius: 10px;
+  background-color: rgba(177, 153, 105, 0.71);
+  margin: 0 auto;
+  padding-top: 42px;
+  padding-bottom: 20px;
+}
+#pc footer div:nth-of-type(2) form input {
+  display: block;
+  width: 269px;
+  height: 50px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding-left: 12px;
+}
+#pc footer div:nth-of-type(2) form input:nth-of-type(2) {
+  margin-top: 26px;
+  margin-bottom: 27px;
+}
+#pc footer div:nth-of-type(2) form button {
+  display: block;
+  width: 138px;
+  height: 36px;
+  background-color: #232221;
+  border-radius: 10px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  margin: 25px auto;
+}
+#pc footer div:nth-of-type(3) {
+  flex: 0 0 672px;
+  height: 540px;
+}
+#pc footer div:nth-of-type(3) a img {
+  display: block;
+  width: 100%;
+}
+/*# sourceMappingURL=index_pc.css.map */

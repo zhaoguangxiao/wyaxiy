@@ -1,0 +1,128 @@
+/*
+
+    移动页面
+
+
+ */
+#mobile header {
+  width: 100%;
+  height: 0.44rem;
+  background-color: #c8b879;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+#mobile header h1 {
+  display: inline-block;
+  width: 0.67rem;
+  height: 25.5px;
+  margin-top: 0.1rem;
+  margin-left: 0.235rem;
+}
+#mobile header h1 a img {
+  display: block;
+  width: 100%;
+}
+#mobile header .more {
+  width: 0.465rem;
+  height: 0.13rem;
+  margin-top: 0.15rem;
+  margin-right: 0.23rem;
+}
+#mobile header .more img {
+  display: block;
+  width: 100%;
+}
+#mobile .top-img {
+  width: 3.75rem;
+  margin-top: 0.43rem;
+}
+#mobile .top-img a img {
+  display: block;
+  width: 100%;
+}
+#mobile nav {
+  padding: 0.25rem 0.3rem 0.225rem;
+}
+#mobile nav a {
+  display: block;
+  width: 1.42rem;
+  margin: 0 auto;
+}
+#mobile nav a img {
+  display: block;
+  width: 100%;
+}
+#mobile nav a p {
+  text-align: center;
+  color: #4a4a4a;
+  line-height: 1em;
+}
+#mobile nav a p:nth-of-type(1) {
+  font-size: 0.105rem;
+  margin-top: 0.14rem;
+  margin-bottom: 0.06rem;
+}
+#mobile nav a p:nth-of-type(2) {
+  font-size: 0.07rem;
+}
+#mobile main {
+  margin-bottom: 0.555rem;
+}
+#mobile main a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#mobile main a img {
+  display: block;
+  width: 100%;
+}
+#mobile main a:nth-of-type(1) {
+  margin-bottom: 0.36rem;
+}
+#mobile main a:nth-of-type(2) {
+  margin-bottom: 0.57rem;
+}
+#mobile form {
+  padding-top: 0.38rem !important;
+  padding-bottom: 0.23rem !important;
+  background-color: rgba(177, 153, 105, 0.3);
+  border-radius: 0.1rem;
+}
+#mobile form h2 img {
+  display: block;
+  margin: 0 auto;
+  height: 0.32rem;
+}
+#mobile form input {
+  font-family: PingFangSC-Bold, serif !important;
+  height: 0.55rem !important;
+  padding-left: 0.12rem;
+}
+#mobile form input:nth-of-type(1) {
+  margin-top: 0.4rem;
+}
+#mobile form input:nth-of-type(2) {
+  margin-top: 0.385rem;
+  margin-bottom: 0.385rem;
+}
+#mobile form input:nth-of-type(3) {
+  margin-bottom: 0.365rem;
+}
+#mobile form button {
+  font-family: PingFangSC-Bold, serif !important;
+  display: block;
+  border: none;
+  width: 1.6rem;
+  height: 0.41rem;
+  background-color: #cba149;
+  border-radius: 0.1rem;
+  font-size: 0.21rem;
+  color: #fff;
+  line-height: 0.41rem;
+  text-align: center;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=index_mobile.css.map */

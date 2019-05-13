@@ -1,0 +1,1 @@
+function setFontSize(){var a=document.getElementsByTagName("html")[0];var b=window.innerWidth;var c=100/375*b;if(b>=640){a.style.fontSize=170.667+"px";return}a.style.fontSize=c+"px"}setFontSize();window.onresize=function(){setFontSize()};
