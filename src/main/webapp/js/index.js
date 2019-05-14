@@ -83,11 +83,10 @@ layui.use(['layer', 'form'], function () {
         // localStorage.setItem("ph", phone)
         // localStorage.setItem("ad", address)
 
-
         console.log(nowIp)
 
-        axios.post("http://192.168.20.45:8080/leave/insert.do?name=" + username + "&url=" + nowUrl + "&tell=" + phone + "&category=1&ip=" + nowIp + "&description=" + address + "&hasComputer=" + userEqt)
-        // axios.post("http://47.103.16.140/leave/insert.do?name=" + username + "&url=" + nowUrl + "&tell=" + phone + "&category=1&ip=" + nowIp + "&description=" + address + "&isComputer=" + userEqt)
+        // axios.post("http://192.168.20.45:8080/leave/insert.do?name=" + username + "&url=" + nowUrl + "&tell=" + phone + "&category=1&ip=" + nowIp + "&description=" + address + "&hasComputer=" + userEqt)
+        axios.post("http://47.103.16.140/leave/insert.do?name=" + username + "&url=" + nowUrl + "&tell=" + phone + "&category=1&ip=" + nowIp + "&description=" + address + "&hasComputer=" + userEqt)
             .then(res => {
                 console.log(res)
                 if (res.data) {

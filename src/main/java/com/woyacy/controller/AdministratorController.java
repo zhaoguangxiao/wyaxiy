@@ -125,7 +125,7 @@ public class AdministratorController {
 
         try {
             String exportXLS = ExcelUtil.ExportExcel(9, columnWidth, "留言导出文件", columnName, dataList);
-            return exportXLS.substring(exportXLS.lastIndexOf("\\")+1, exportXLS.length());
+            return exportXLS.substring(exportXLS.lastIndexOf("/")+1, exportXLS.length());
         } catch (Exception e) {
             return null;
         }
@@ -213,6 +213,5 @@ public class AdministratorController {
      }
      }
      */
-
 
 }
