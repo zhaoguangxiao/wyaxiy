@@ -22,7 +22,7 @@ public class ExcelUtil {
 
     /**
      * 获取excel中的数据,指定开始行，可选着指定结束行
-     * @param file 			excel文件输入流
+     * @param fileInputStream 			excel文件输入流
      * @param beginRow		取数数据的开始行
      * @param endRow		取数数据的结束行 ，不指定传入0
      * @param endColl		结束列
@@ -76,7 +76,7 @@ public class ExcelUtil {
     }
     /**
      * 获取excel中的数据，指定开始行，结束行，指定列
-     * @param file 			excel文件输入流
+     * @param fileInputStream 			excel文件输入流
      * @param columnNumber	int[]需要取的列的序号
      * @param beginRow		取数数据的开始行
      * @param endRow		指定取数数据的结束行 ，不指定则出入0
@@ -247,7 +247,7 @@ public class ExcelUtil {
         return headerFont;
     }
     /**
-     * 保存文件
+     * 保存文件,返回文件的名字
      * @param wb
      * @param fileName
      * @return
@@ -256,7 +256,8 @@ public class ExcelUtil {
         String filePath="";
         Date createtime = new Date();
         SimpleDateFormat formater = new SimpleDateFormat("yyyyMMdd");
-        String path = "export" + File.separatorChar + formater.format(createtime);
+        //  String path = "export" + File.separatorChar + formater.format(createtime);
+        String path = "export";
         File targetFile = new File(PathUtil.getUploadPath() + File.separatorChar, path);
         //判断文件夹是否存在，不存在则创建
         if (!targetFile.exists()) {

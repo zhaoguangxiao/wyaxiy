@@ -52,5 +52,8 @@ public interface LeaveWordService {
     public void deleteLeaveWordById(Long id);
 
 
+    public List<LeaveWordBean> findAll();
+
+
 
 }

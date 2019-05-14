@@ -13,6 +13,8 @@ public class LeaveWordBean implements Serializable {
     public static final int ZHOU_YUAN_WAI=1;
 
 
+    public static final int IS_COMPUTER=0;
+    public static final int IS_MOBILE=1;
 
     private Long id;
     private String uname;
@@ -23,8 +25,16 @@ public class LeaveWordBean implements Serializable {
     private Date createTime;
     private String ip;
     private Integer category;
+    private Integer hasComputer;
 
 
+    public Integer getHasComputer() {
+        return hasComputer;
+    }
+
+    public void setHasComputer(Integer hasComputer) {
+        this.hasComputer = hasComputer;
+    }
 
     public Long getId() {
         return id;

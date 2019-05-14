@@ -24,4 +24,7 @@ public interface LeaveWordMapper {
 
     public List<LeaveWordBean> findLeaveWordByCondition(Map<String,Object> map);
 
+
+    public List<LeaveWordBean> selectAll();
+
 }

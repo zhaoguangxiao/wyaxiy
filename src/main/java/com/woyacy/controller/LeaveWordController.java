@@ -18,7 +18,7 @@ public class LeaveWordController {
 
 
     @RequestMapping("/insert")
-    public boolean saveLeaveWord(String name,String url,String tell,int category,String ip,String description){
+    public boolean saveLeaveWord(String name,String url,String tell,int category,String ip,String description,Integer hasComputer){
         try {
             LeaveWordBean wordBean = new LeaveWordBean();
             wordBean.setUname(name);
@@ -29,6 +29,7 @@ public class LeaveWordController {
             wordBean.setIp(ip);
             wordBean.setStatus(LeaveWordBean.UNREAD_STATUS); //默认未读状态
             wordBean.setDistrict(description);
+            wordBean.setHasComputer(hasComputer);
             leaveWordService.addLeaveWord(wordBean);
             return true;
         }catch (Exception e){

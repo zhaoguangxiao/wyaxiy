@@ -109,7 +109,7 @@ public class AdministratorController {
      * 根据搜索条件导出Excel
      */
     @RequestMapping(value = "/export", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
-    public boolean export(String name, String tell, String beginTime, String endTime) throws Exception {
+    public String export(String name, String tell, String beginTime, String endTime) throws Exception {
         //查询数据
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("uname", name);
@@ -125,9 +125,9 @@ public class AdministratorController {
 
         try {
             String exportXLS = ExcelUtil.ExportExcel(9, columnWidth, "留言导出文件", columnName, dataList);
-            return true;
+            return exportXLS.substring(exportXLS.lastIndexOf("\\")+1, exportXLS.length());
         } catch (Exception e) {
-            return false;
+            return null;
         }
     }
 
@@ -213,4 +213,6 @@ public class AdministratorController {
      }
      }
      */
+
+
 }

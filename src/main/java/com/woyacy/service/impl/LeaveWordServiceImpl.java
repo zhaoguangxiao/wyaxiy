@@ -85,4 +85,9 @@ public class LeaveWordServiceImpl implements LeaveWordService {
     public void deleteLeaveWordById(Long id) {
         leaveWordMapper.deleteByIds(id);
     }
+
+    @Override
+    public List<LeaveWordBean> findAll() {
+        return leaveWordMapper.selectAll();
+    }
 }

@@ -24,12 +24,10 @@
   box-sizing: border-box;
   /*去除移动端特有的点击高亮效果*/
   -webkit-tap-highlight-color: transparent;
-  touch-action: none;
 }
 #mobile body {
   font-family: "微软雅黑", sans-serif;
   font-size: 13px;
-  height: 100%;
 }
 #mobile a,
 #mobile a:hover {
@@ -74,7 +72,12 @@
   clear: both;
   visibility: hidden;
 }
-
+@font-face {
+  font-family: 'iconfont';
+  /* project id 1119145 */
+  src: url('//at.alicdn.com/t/font_1119145_vpupjymfhd.eot');
+  src: url('//at.alicdn.com/t/font_1119145_vpupjymfhd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1119145_vpupjymfhd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1119145_vpupjymfhd.woff') format('woff'), url('//at.alicdn.com/t/font_1119145_vpupjymfhd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1119145_vpupjymfhd.svg#iconfont') format('svg');
+}
 #mobile .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;

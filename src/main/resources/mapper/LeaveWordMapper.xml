@@ -13,10 +13,12 @@
         <result column="createtime" property="createTime" jdbcType="TIMESTAMP"/>
         <result column="ip" property="ip" jdbcType="VARCHAR"/>
         <result column="shoptype" property="category" jdbcType="BIGINT"/>
+        <result column="isComputer" property="hasComputer" jdbcType="BIGINT"/>
+
     </resultMap>
 
 
-    <sql id="BaseUser">ID,uname,phone,district,status,url,createtime,ip,shoptype</sql>
+    <sql id="BaseUser">ID,uname,phone,district,status,url,createtime,ip,shoptype,isComputer</sql>
 
 
     <insert id="insertLeaveWord" parameterType="com.woyacy.bean.LeaveWordBean">
@@ -24,13 +26,13 @@
         (
         ID,uname,phone,
         district,status,url,
-        createtime,ip,shoptype
+        createtime,ip,shoptype,isComputer
         )
         values
         (
         #{id,jdbcType=BIGINT},#{uname,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR},
         #{district,jdbcType=VARCHAR},#{status,jdbcType=BIGINT},#{url,jdbcType=VARCHAR},
-        #{createTime,jdbcType=TIMESTAMP},#{ip,jdbcType=VARCHAR},#{category,jdbcType=BIGINT}
+        #{createTime,jdbcType=TIMESTAMP},#{ip,jdbcType=VARCHAR},#{category,jdbcType=BIGINT},#{hasComputer,jdbcType=BIGINT}
         )
     </insert>
 
@@ -102,6 +104,12 @@
 
         </where>
 
+    </select>
+
+
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT <include refid="BaseUser"></include> from tb_leave
     </select>
 
 </mapper>

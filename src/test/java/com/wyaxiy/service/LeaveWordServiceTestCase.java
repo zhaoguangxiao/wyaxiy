@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:*.xml"})
@@ -31,11 +32,8 @@ public class LeaveWordServiceTestCase {
      */
     @Test
     public void saveLeaveWord(){
-
-
-        for (int i = 200; i < 500; i++) {
             LeaveWordBean bean = new LeaveWordBean();
-            bean.setUname("zs1"+i);
+            bean.setUname("ninhaoa");
             bean.setUrl("hanbaba.com.cn");
             bean.setPhone("17613720880");
             bean.setCreateTime(new Date());
@@ -43,8 +41,8 @@ public class LeaveWordServiceTestCase {
             bean.setIp("10.40.39.68");
             bean.setStatus(LeaveWordBean.UNREAD_STATUS); //默认未读状态
             bean.setDistrict("上海");
+            bean.setHasComputer(LeaveWordBean.IS_MOBILE);
             leaveWordService.addLeaveWord(bean);
-        }
     }
 
     /**
@@ -52,7 +50,7 @@ public class LeaveWordServiceTestCase {
      */
     @Test
     public void deleteLeaveWord(){
-        Long [] aLong = new Long[]{Long.valueOf(2)};
+        Long [] aLong = new Long[]{Long.valueOf(4050)};
         leaveWordService.deleteLeaveWordById(aLong);
     }
 
@@ -67,7 +65,7 @@ public class LeaveWordServiceTestCase {
 
     @Test
     public void selectKey(){
-        LeaveWordBean leaveWordBean = leaveWordService.selectLeaveWordByKey(1L);
+        LeaveWordBean leaveWordBean = leaveWordService.selectLeaveWordByKey(4051L);
         Assert.assertNotNull(leaveWordBean.getId()!=null);
     }
 
@@ -91,5 +89,9 @@ public class LeaveWordServiceTestCase {
     }
 
 
+    @Test
+    public void findAll(){
+        leaveWordService.findAll();
+    }
 
 }
